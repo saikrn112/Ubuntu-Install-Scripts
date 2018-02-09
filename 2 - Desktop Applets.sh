@@ -6,6 +6,9 @@ source ~/.zshrc
 dconf write /org/compiz/profiles/unity/plugins/unityshell/launcher-hide-mode 1 
 dconf write /org/compiz/profiles/unity/plugins/unityshell/icon-size 34
 
+# Local time settings [useful for dual boot]
+timedatectl set-local-rtc 1
+
 # TLP manager 
 sudo add-apt-repository ppa:linrunner/tlp -y
 sudo apt-get update

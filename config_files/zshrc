@@ -1,0 +1,48 @@
+
+
+#
+# User configuration sourced by interactive shells
+#
+
+# Change default zim location
+export ZIM_HOME=${ZDOTDIR:-${HOME}}/.zim
+
+# Start zim
+[[ -s ${ZIM_HOME}/init.zsh ]] && source ${ZIM_HOME}/init.zsh
+
+# CUDA stuff
+export PATH=/usr/local/cuda-9.0/bin${PATH:+:${PATH}}
+export LD_LIBRARY_PATH=/usr/local/cuda-9.0/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+
+
+# ROS Stuff
+source /opt/ros/kinetic/setup.zsh
+source ~/zed_ws/devel/setup.zsh
+export ROS_PACKAGE_PATH=${ROS_PACKAGE_PATH}:~/orbslam/ORB_SLAM2/Examples/ROS
+
+# Aliases 
+alias sR='source ./devel/setup.zsh'
+
+# Anacoda Stuff
+#export PATH="/home/bhagyasyam/anaconda3/bin:$PATH"
+
+# Productivity Hacks
+alias ..="cd .."
+alias ..2="cd ../.."
+alias ..3="cd ../../.."
+alias ..4="cd ../../../.."
+alias ..5="cd ../../../../.."
+
+function mkdircd () { mkdir -p "$@" && eval cd "\"\$$#\""; }
+
+CDPATH=/media/Extra
+#PX4 stuff
+export PATH=/media/bhagyasyam/Extra/gcc-arm-none-eabi-7-2017-q4-major/bin:$PATH
+
+alias gs="git status"
+alias ga="git add ."
+alias gc="git commit -m"
+alias sad="sudo apt update"
+alias sag="sudo apt dist-upgrade"
+alias sai="sudo apt install"
+alias sar="sudo apt remove"

@@ -30,7 +30,7 @@ git clone --recursive https://github.com/Eriner/zim.git ${ZDOTDIR:-${HOME}}/.zim
 cp ./config_files/zsh_config ~/.zim/templates/zimrc
 ln -s ~/.zim/templates/zimrc ~/.zimrc
 ln -s ~/.zim/templates/zlogin ~/.zlogin
-ln -sf $0/Ubuntu-install-scripts ~/Ubuntu-install-scripts 
+ln -sf $0/Ubuntu-install-scripts ~/
 ln -sf ~/Ubuntu-install-scripts/config_files/zshrc ~/.zshrc 
 
 # If you prefer Prezto, then uncomment the next few lines. Zim is much faster though

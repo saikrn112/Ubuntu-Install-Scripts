@@ -22,6 +22,8 @@ alias sZsh="source ~/.zshrc"
 # Useful Functions
 function bk () { bksuffix=`date +%Y%m%d%H%M%S`; newname=$1.$bksuffix; cp $1 $newname; echo "$1 --> $newname"}
 function mkdircd () { mkdir -p "$@" && eval cd "\"\$$#\""; }
+function pid () { ps -fU $USER | grep $1 | grep -v "grep" | grep -v "ps -fU"; }
+function dur () { du -a -h -d 1 $1 | sort -h -r}
 
 CDPATH=/media/Extra
 # PX4 stuff
@@ -43,7 +45,6 @@ alias sad="sudo apt update"
 alias sag="sudo apt dist-upgrade"
 alias sai="sudo apt install"
 alias sar="sudo apt remove"
-alias dur="du -a -h -d 1 | sort -h -r"
 alias dirSize="dur"
 alias lt="ls -alrth"
 
@@ -55,3 +56,5 @@ alias di='docker images -a'
 alias dps='docker ps -a -s'
 alias dsys='docker system df'
 
+# AWS 
+alias awsSSH='ssh -i "~/Ramanatest.pem" ubuntu@ec2-52-66-209-108.ap-south-1.compute.amazonaws.com'
